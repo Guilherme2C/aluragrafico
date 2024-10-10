@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhores Memes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Relatório dos Memes</h1>
+        <nav>
+            <a href="index.html">Mundo</a>
+            <a href="#">Minha escola</a>
+        </nav>
+    </header>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <div id="grafico-usuarios" class="grafico"></div>
+            <div class="graficos-container__texto">
+                <span>Melhores Memes da Atualidade</span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido pelos D</p>
+    </footer>
+    <script>
+        // Dados fictícios para o gráfico
+        const Memes = ['Bora Bill', 'Amostradinho', 'Luva de Pedreiro', 'Casca de Bala', 'Jokler Laugh'];
+        const usuarios = [15, 13, 20, 22, 34]; // em porra
+
+        const trace = {
+            x: Memes,
+            y: usuarios,
+            type: 'bar',
+            marker: {
+                color: '#F05291',
+            },
+        };
+
+        const layout = {
+            title: 'Número de Memes Enjoyers (Na escola)',
+            xaxis: {
+                title: 'Top Memes',
+            },
+            yaxis: {
+                title: 'Número de Meme Enjoyers (Na escola)',
+            },
+            paper_bgcolor: 'rgba(0, 0, 0, 0)',
+            plot_bgcolor: 'rgba(0, 0, 0, 0)',
+            font: {
+                color: '#DDDDDD',
+            },
+        };
+
+        Plotly.newPlot('grafico-usuarios', [trace], layout);
+    </script>
+</body>
+</html>
